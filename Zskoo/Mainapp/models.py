@@ -19,10 +19,20 @@ class Zskoo_Ctrl_Point(models.Model):
         return self.ctrl_point
 
 
-# 标准主表
+class Zskoo_Conclusion(models.Model):
+    # main_id = models.ForeignKey(Zskoo_Main, on_delete=models.CASCADE, null=True, default='XXX')   # 外键Zskoo_Main
+    result_record = models.TextField(default='null')  # 结果记录
+    conformity = models.CharField(max_length=100)  # 符合情况
+    resume = models.TextField(default='null')  # 简述
+
+    def __str__(self):
+        return self.resume
+
+
 class Zskoo_Main(models.Model):
-    zskoo_kind = models.ForeignKey(Zskoo_Kind, on_delete=models.CASCADE, null=True, default='XXX')    # 安全类   外键表在下面需要加上单引号
-    ctrl_point_id = models.ForeignKey(Zskoo_Ctrl_Point, on_delete=models.CASCADE, null=True, default='XXX')   # 控制点
+    zskoo_kind = models.ForeignKey(Zskoo_Kind, on_delete=models.CASCADE, null=True)    # 安全类   外键表在下面需要加上单引号
+    ctrl_point_id = models.ForeignKey(Zskoo_Ctrl_Point, on_delete=models.CASCADE, null=True)   # 控制点
+    condusion_id = models.ForeignKey(Zskoo_Conclusion, on_delete=models.CASCADE, null=True)
     ctrl_object = models.TextField(default='null')   # 控制项
     industry = models.CharField(max_length=100)   # 行业分类
     S = models.CharField(max_length=20)
@@ -33,14 +43,6 @@ class Zskoo_Main(models.Model):
         return self.ctrl_object
 
 
-# 结果记录表
-class Zskoo_Conclusion(models.Model):
-    main_id = models.ForeignKey(Zskoo_Main, on_delete=models.CASCADE, null=True, default='XXX')   # 外键Zskoo_Main
-    result_record = models.TextField(default='null')   # 结果记录
-    conformity = models.CharField(max_length=100)   # 符合情况
-    resume = models.TextField(default='null')   # 简述
 
-    def __str__(self):
-        return self.resume
 
 
