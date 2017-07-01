@@ -20,7 +20,6 @@ class Zskoo_Ctrl_Point(models.Model):
 
 
 class Zskoo_Conclusion(models.Model):
-    # main_id = models.ForeignKey(Zskoo_Main, on_delete=models.CASCADE, null=True, default='XXX')   # 外键Zskoo_Main
     result_record = models.TextField(default='null')  # 结果记录
     conformity = models.CharField(max_length=100)  # 符合情况
     resume = models.TextField(default='null')  # 简述
