@@ -54,7 +54,7 @@ ROOT_URLCONF = 'Zskoo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'D:\Github_t\Zskoo\Zskoo\Templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'Templates')], # D:\Github_t\Zskoo\Zskoo\Templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
