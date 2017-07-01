@@ -8,14 +8,14 @@ from django.db import models
 class Zskoo_Kind(models.Model):
     security_object = models.CharField(max_length=100)   # 安全类  exp：网络 主机 应用
 
-    def __unicode__(self):
+    def __str__(self):
         return self.security_object
 
 
 class Zskoo_Ctrl_Point(models.Model):
     ctrl_point = models.CharField(max_length=100)   # 控制点  exp：身份鉴别 访问控制
 
-    def __unicode__(self):
+    def __str__(self):
         return self.ctrl_point
 
 
@@ -29,7 +29,7 @@ class Zskoo_Main(models.Model):
     A = models.CharField(max_length=20)
     G = models.CharField(max_length=20)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.ctrl_object
 
 
@@ -40,7 +40,7 @@ class Zskoo_Conclusion(models.Model):
     conformity = models.CharField(max_length=100)   # 符合情况
     resume = models.TextField(default='null')   # 简述
 
-    def __unicode__(self):
+    def __str__(self):
         return self.resume
 
 
