@@ -27,28 +27,26 @@
       <div class="two wide column">
         <!--<h1 class="ui header">-->
           <i class="icon star"></i>       <!-- 网络安全 -->
-          {{ kind }}
+          {% for kind_one in main_data %}
+            {{ kind_one }}
+          {% endfor %}
         </h1>
       </div>
 
       <div class="two wide column">       <!-- 结构安全 -->
-        {{ point }}
+          {{ main_data }}
       </div>
 
       <div class="five wide column">       <!-- a）b） -->
-        {{ ctrl_ob }}
+
       </div>
 
       <div class="five wide column">       <!-- 结果记录 -->
-         {% for r in result %}
-             {{ r }}
-         {% endfor %}
+
       </div>
 
       <div class="two wide column">        <!-- 符合情况 -->
-         {% for c in conformity %}
-             {{ c }}
-         {% endfor %}
+
       </div>
     </div>
 

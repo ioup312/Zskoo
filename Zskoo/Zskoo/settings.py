@@ -25,7 +25,7 @@ SECRET_KEY = '(@%xz8wi8jd8gh#_k*ogj^=k(ct8wve2=c!e#nt#+ork2-z*zq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']    #python manage.py runserver设置允许哪些ip访问
 
 # Application definition
 
