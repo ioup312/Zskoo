@@ -24,30 +24,18 @@
 
 
     <div class="ui grid veay padded">
-      <div class="two wide column">
-        <!--<h1 class="ui header">-->
-          <i class="icon star"></i>       <!-- 网络安全 -->
-          {% for kind_one in main_data %}
-            <div>{{ kind_one }}</div>
-          {% endfor %}
+      <div class="ten wide column">
+        <!-- <h1 class="ui header"> -->
+          <!-- <i class="icon star"></i> -->
+          <table border="1">      <!-- 网络安全 -->
+            <tr>{% for kind_one in main_data %}</tr>
+              <th>{{ kind_one.ctrl_object }}</th>
+              <th>{{ kind_one.industry}}</th>
+            <tr>{% endfor %}</tr>
+        </table>
         </h1>
       </div>
 
-      <div class="two wide column">       <!-- 结构安全 -->
-          {{ main_data }}
-      </div>
-
-      <div class="five wide column">       <!-- a）b） -->
-
-      </div>
-
-      <div class="five wide column">       <!-- 结果记录 -->
-
-      </div>
-
-      <div class="two wide column">        <!-- 符合情况 -->
-
-      </div>
     </div>
 
 

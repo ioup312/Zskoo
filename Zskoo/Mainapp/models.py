@@ -34,6 +34,8 @@ class Zskoo_Main(models.Model):
 
 
 class Zskoo_Conclusion(models.Model):
+    zskoo_kind = models.ForeignKey(Zskoo_Kind, on_delete=models.CASCADE, null=True)    # 安全类   外键表在下面需要加上单引号
+    ctrl_point_id = models.ForeignKey(Zskoo_Ctrl_Point, on_delete=models.CASCADE, null=True)   # 控制点
     main_id = models.ForeignKey('Zskoo_main', on_delete=models.CASCADE, null=True)
     result_record = models.TextField(default='null')  # 结果记录
     conformity = models.CharField(max_length=100, default='null')  # 符合情况
