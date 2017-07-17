@@ -19,6 +19,13 @@ class Zskoo_Ctrl_Point(models.Model):
         return self.ctrl_point
 
 
+class fuheqk(models.Model):
+    conformity = models.CharField(max_length=100, default='null')
+
+    def __str__(self):
+        return self.conformity
+
+
 class Zskoo_Main(models.Model):
     zskoo_kind = models.ForeignKey(Zskoo_Kind, on_delete=models.CASCADE, null=True)    # 安全类   外键表在下面需要加上单引号
     ctrl_point_id = models.ForeignKey(Zskoo_Ctrl_Point, on_delete=models.CASCADE, null=True)   # 控制点
@@ -36,9 +43,9 @@ class Zskoo_Main(models.Model):
 class Zskoo_Conclusion(models.Model):
     zskoo_kind = models.ForeignKey(Zskoo_Kind, on_delete=models.CASCADE, null=True)    # 安全类   外键表在下面需要加上单引号
     ctrl_point_id = models.ForeignKey(Zskoo_Ctrl_Point, on_delete=models.CASCADE, null=True)   # 控制点
-    main_id = models.ForeignKey('Zskoo_main', on_delete=models.CASCADE, null=True)
+    main_id = models.ForeignKey(Zskoo_Main, on_delete=models.CASCADE, null=True)    #要求项
     result_record = models.TextField(default='null')  # 结果记录
-    conformity = models.CharField(max_length=100, default='null')  # 符合情况
+    conformity = models.ForeignKey(fuheqk, on_delete=models.CASCADE, null=True)  # 符合情况
     resume = models.TextField(default='null')  # 简述
 
     def __str__(self):
