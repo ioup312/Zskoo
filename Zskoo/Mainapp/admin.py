@@ -5,7 +5,10 @@ from Mainapp import models
 
 
 class Zskoo_Conclusion_menu(admin.ModelAdmin):
-    list_display = ('zskoo_kind', 'ctrl_point_id', 'main_id')
+    list_display = ('zskoo_kind', 'ctrl_point_id', 'main_id', 'result_record', 'conformity')
+    list_display_links = ('zskoo_kind', 'ctrl_point_id', 'main_id', 'result_record', 'conformity')
+    list_filter=('zskoo_kind', 'ctrl_point_id', 'main_id')
+    search_fields=('result_record',)
 
 
 admin.site.register(models.Zskoo_Main)

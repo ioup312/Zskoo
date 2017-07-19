@@ -47,6 +47,10 @@ class Zskoo_Conclusion(models.Model):
     result_record = models.TextField(default='null')  # 结果记录
     conformity = models.ForeignKey(fuheqk, on_delete=models.CASCADE, null=True)  # 符合情况
     resume = models.TextField(default='null')  # 简述
+    industry = models.CharField(max_length=100, null=True)   # 行业分类
+    S = models.CharField(max_length=20, null=True)
+    A = models.CharField(max_length=20, null=True)
+    G = models.CharField(max_length=20, null=True)
 
     def __str__(self):
-        return self.resume
+        return self.conformity
